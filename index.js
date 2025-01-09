@@ -31,7 +31,7 @@ const upload = multer({ storage: storage });
 
 app.use("/upload", express.static(path.join(__dirname, "upload")));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.post("/upload", upload.single("picture"), (req, res) => {
   if (!req.body.category) {
@@ -39,38 +39,40 @@ app.post("/upload", upload.single("picture"), (req, res) => {
   }
 
   res.json({
-    message: "Successfully added!",
-    link: `http://localhost:${PORT}/upload/${req.body.category}/${req.file.filename}`,
+    message: "Successfully added!"
   });
 });
 
-app.get('/getFolders', (req, res) => {
-  const uploadPath = path.join(__dirname, 'upload');
+app.get("/getFolders", (req, res) => {
+  const uploadPath = path.join(__dirname, "upload");
   fs.readdir(uploadPath, { withFileTypes: true }, (err, files) => {
     if (err) {
-      return res.status(500).send('Xatolik yuz berdi');
+      return res.status(500).send("Xatolik yuz berdi");
     }
-    const folders = files.filter(file => file.isDirectory()).map(file => file.name);
+    const folders = files
+      .filter((file) => file.isDirectory())
+      .map((file) => file.name);
     res.json(folders);
   });
 });
 
-app.get('/getImages', (req, res) => {
+app.get("/getImages", (req, res) => {
   const folder = req.query.folder;
-  const folderPath = path.join(__dirname, 'upload', folder);
-  
+  const folderPath = path.join(__dirname, "upload", folder);
+
   fs.readdir(folderPath, (err, files) => {
     if (err) {
-      return res.status(500).send('Xatolik yuz berdi');
+      return res.status(500).send("Xatolik yuz berdi");
     }
-    const images = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file))
-                         .map(file => `/upload/${folder}/${file}`);
+    const images = files
+      .filter((file) => /\.(jpg|jpeg|png|gif)$/i.test(file))
+      .map((file) => `/upload/${folder}/${file}`);
     res.json(images);
   });
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => {

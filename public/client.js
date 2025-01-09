@@ -17,7 +17,7 @@ document
       }
       const data = await response.json();
       Toastify({
-        text: data,
+        text: JSON.stringify(data.message),
         duration: 3000,
         close: true,
         gravity: "top",
@@ -26,7 +26,8 @@ document
           background: "linear-gradient(to right, #00b09b, #96c93d)",
           fontSize: "18px",
           borderRadius: "10px",
-          maxWidth: "300px",
+          width: "700px",
+          height: "200px",
           padding: "15px 30px",
         },
       }).showToast();
