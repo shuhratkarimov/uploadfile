@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f0f0f0;
+    gap: 30px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #064f9c;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 25px;
+    box-shadow: 10px 10px 18px rgb(0, 0, 0);
+  }
+  
+  button:hover {
+    background-color: #033b77;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+  button:hover {
+    transform: scale(1.1);
+  }
+  

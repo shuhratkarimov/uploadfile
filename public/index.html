@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File yuklash</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+  <a href="gallery.html" id="galleryButton" class="btn">Galereya</a>
+  <div class="container">
+    <h2>Rasmlarni toifasi bilan yuklash</h2>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+      <input type="text" id="category" name="category" placeholder="Rasm toifasini kiriting (masalan: landscapes yoki boshqa)" required>
+      <input type="file" id="picture" name="picture" accept="image/*" required>
+      <button class="btn" type="submit">Yuklash</button>
+      <p class="instruction">Yuklangan rasmlarni ko'rish uchun o'ng yuqori burchakdagi "Gallery" tugmasini bosing</p>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="./client.js"></script>
+</body>
+</html>
