@@ -24,10 +24,10 @@ document
         position: "right",
         style: {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
-          fontSize: "18px",
+          fontSize: "25px",
           borderRadius: "10px",
-          width: "700px",
-          height: "200px",
+          width: "400px",
+          height: "150px",
           padding: "15px 30px",
         },
       }).showToast();

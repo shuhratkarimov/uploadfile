@@ -39,7 +39,7 @@ app.post("/upload", upload.single("picture"), (req, res) => {
   }
 
   res.json({
-    message: "Successfully added!"
+    message: "Successfully added!",
   });
 });
 
