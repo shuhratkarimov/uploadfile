@@ -23,12 +23,16 @@ document
         gravity: "top",
         position: "right",
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right,rgb(0, 176, 23), #96c93d)",
           fontSize: "25px",
           borderRadius: "10px",
-          width: "400px",
-          height: "150px",
+          width: "300px",
+          height: "120px",
           padding: "15px 30px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center"
         },
       }).showToast();
     } catch (error) {
