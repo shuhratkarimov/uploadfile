@@ -16,6 +16,7 @@ document
         throw new Error(`Server xatosi: ${response.status}`);
       }
       const data = await response.json();
+      document.getElementById("uploadForm").reset();
       Toastify({
         text: JSON.stringify(data.message),
         duration: 3000,

@@ -33,9 +33,21 @@ window.onload = () => {
     gallery.innerHTML = '';
   
     images.forEach(image => {
+      const imgContainer = document.createElement('div');
+      imgContainer.style.textAlign = 'center';
+      imgContainer.style.marginBottom = '15px'; 
       const imgElement = document.createElement('img');
       imgElement.src = image;
-      gallery.appendChild(imgElement);
+      imgElement.style.width = '400px'; 
+      imgElement.style.height = 'auto'; 
+      const imgName = document.createElement('p');
+      imgName.textContent = image.split('/').pop();
+      imgName.style.fontSize = '18px'; 
+      imgName.style.color = '#555';
+      imgContainer.appendChild(imgElement);
+      imgContainer.appendChild(imgName);
+      gallery.appendChild(imgContainer);
     });
   }
+  
   
