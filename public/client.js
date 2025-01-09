@@ -8,7 +8,7 @@ document
     formData.append("category", category);
     formData.append("picture", picture);
     try {
-      const response = await fetch("http://localhost:3000/upload", {
+      const response = await fetch(`${URL}/upload`, {
         method: "POST",
         body: formData,
       });

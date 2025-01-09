@@ -1,5 +1,5 @@
 window.onload = () => {
-    axios.get("http://localhost:3000/getFolders")
+    axios.get(`${URL}/getFolders`)
       .then(response => {
         const folders = response.data;
         generateButtons(folders);
@@ -19,7 +19,7 @@ window.onload = () => {
     });
   }
   function fetchImages(folder) {
-    axios.get(`http://localhost:3000/getImages?folder=${folder}`)
+    axios.get(`${URL}/getImages?folder=${folder}`)
       .then(response => {
         const images = response.data;
         displayImages(images);
