@@ -4,7 +4,6 @@ require("dotenv").config();
 const multer = require("multer");
 const fs = require("fs");
 const PORT = process.env.PORT || 3000;
-const serverUrl = process.env.RENDER_URL
 const app = express();
 const cors = require("cors");
 
@@ -34,18 +33,13 @@ app.use("/upload", express.static(path.join(__dirname, "upload")));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/getServerUrl", (req, res) => {
-  const serverUrl = process.env.RENDER_URL || "http://localhost:3000"; 
-  res.json({ serverUrl });
-});
-
 app.post("/upload", upload.single("picture"), (req, res) => {
   if (!req.body.category) {
     return res.status(400).json({ message: "Category is required" });
   }
 
   res.json({
-    message: "Successfully added!",
+    message: "Successfully added!"
   });
 });
 
